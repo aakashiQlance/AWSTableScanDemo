@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    namespace 'com.aakash.awstablescandemo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.aakash.awstablescandemo"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        pickFirst  '**'
+    }
+
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//AWS Server Setup
+    implementation 'com.amplifyframework:core:2.1.1'
+    implementation 'com.amplifyframework:aws-api:1.18.0'
+
+    implementation 'com.amplifyframework:aws-storage-s3:2.2.0'
+    implementation 'com.amplifyframework:aws-auth-cognito:2.2.0'
+
+    implementation 'com.amplifyframework:aws-datastore:1.24.0'
+
+
+    implementation 'com.amplifyframework:aws-predictions:2.1.1'
+    implementation 'com.amplifyframework:aws-auth-cognito:2.1.1'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.mayank:simplecropview:1.0.0'
+
+
+}
